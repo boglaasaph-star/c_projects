@@ -1,0 +1,31 @@
+# Project: piles_par_listes_simplement_chainéées
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main1.o piles_listes_chainees.o
+LINKOBJ  = main1.o piles_listes_chainees.o
+LIBS     = -L"C:/Users/Hp/Desktop/Dev-Cpp/MinGW64/lib32" -L"C:/Users/Hp/Desktop/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32 -pg
+INCS     = -I"C:/Users/Hp/Desktop/Dev-Cpp/MinGW64/include" -I"C:/Users/Hp/Desktop/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/Hp/Desktop/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Users/Hp/Desktop/Dev-Cpp/MinGW64/include" -I"C:/Users/Hp/Desktop/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/Hp/Desktop/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/Hp/Desktop/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = piles_par_listes_simplement_chainees.exe
+CXXFLAGS = $(CXXINCS) -m32 -pg
+CFLAGS   = $(INCS) -m32 -pg
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main1.o: main1.c
+	$(CC) -c main1.c -o main1.o $(CFLAGS)
+
+piles_listes_chainees.o: piles_listes_chainees.c
+	$(CC) -c piles_listes_chainees.c -o piles_listes_chainees.o $(CFLAGS)
